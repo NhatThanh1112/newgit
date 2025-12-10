@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKER</title>
+    <link rel="stylesheet" href="./sneaker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- nav -->
+        <div class="top-menu">
+            <div>
+                <a href="../Home/sneaker.html"><img src="../imgs/sneaker.png" alt="logo"></a>
+            </div>
+            <div class="page">
+                <div class="nav"><a href="../Home/sneaker.html">
+                        <h4>Home</h4>
+                    </a></div>
+                <div class="nav"><a href="#">
+                        <h4>Introduction</h4>
+                    </a></div>
+                <!-- <div class="gender"> -->
+                <a class="nav gender" onclick="scrollDown()">
+                    <h4 class="type">Men</h4>
+                </a>
+
+                <a class="nav gender" onclick="scrollDown()">
+                    <h4 class="type">Women</h4>
+                </a>
+
+                <a class="nav gender" onclick="scrollDown()">
+                    <h4 class="type">Kids</h4>
+                </a>
+
+            </div>
+            <div class="icon">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                    <a href="#" class="search-link">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </div>
+                <a href="./cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a id="logIn"></a>
+                <a href="../signIn/signIn.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <main>
+            <img src="../imgs/banner-7_files/banner-7.jpg" class="slider" alt="">
+            <img src="../imgs/banner-7_files/banner-8.jpg" class="slider" alt="">
+            <img src="../imgs/banner-7_files/banner-9.jpg" class="slider" alt="">
+            <img src="../imgs/banner-7_files/banner-10.jpg" class="slider" alt="">
+            <div class="navi">
+
+                <button onclick="preBtn()"><i class="fa-solid fa-arrow-left"></i></button>
+                <button onclick="nextBtn()"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </main>
+        <div class="main-content">
+            <div class="selector">
+                <a href="#" id="all" class="highlight type">All</a>
+                <a href="#" id="fashion" class="type">Fashion</a>
+                <a href="#" class="type">Running</a>
+                <a href="#" class="type">Basketball</a>
+                <a href="#" class="type">Football</a>
+            </div>
+            <div class="product-layout">
+                <div class="ad-banner left">
+                    <img class="ad" src="../imgs/banner-7_files/banner-27.png">
+                    <img class="ad" src="../imgs/banner-7_files/banner-21.jpg">
+                    <img class="ad" src="../imgs/banner-7_files/banner-23.png">
+                    <img class="ad" src="../imgs/banner-7_files/banner-20.jpg">
+                </div>
+                <div id="products">
+                </div>
+
+                <div class="ad-banner right">
+                    <img class="ad" src="../imgs/banner-7_files/banner-22.jpg" alt="Right Ad">
+                    <img class="ad" src="../imgs/banner-7_files/banner-26.png" alt="Right Ad">
+                    <img class="ad"src="../imgs/banner-7_files/banner-25.png">
+                    <img class="ad" src="../imgs/banner-7_files/banner-24.jpg.jpg">
+                </div>
+            </div>
+
+        </div>
+        <div class="end">
+            <div>
+                <img src="../imgs/sneakers.jpg" alt="logo">
+            </div>
+            <div>
+                <h4>NHÀ PHÂN PHỐI ĐỘC QUYỀN SNEAKERS</h4>
+                <h5>Hotline: 086655 0286</h5>
+                <h5>Address: Number 16, Đội Cấn Street, Ba Đình, Hà Nội</h5>
+                <h5>Email: contact@alzadosport.com</h5>
+            </div>
+            <div>
+                <h4>CHÍNH SÁCH CÔNG TY</h4>
+                <h5>Vận chuyển và giao hàng</h5>
+                <h5>Chính sách bán hàng</h5>
+                <h5>Chính Sách Đổi Trả & Bảo Hành</h5>
+                <h5>Chính sách bảo mật</h5>
+            </div>
+            <div>
+                <h4>CHÍNH SÁCH CÔNG TY</h4>
+                <h5>Vận chuyển và giao hàng</h5>
+                <h5>Chính sách bán hàng</h5>
+                <h5>Chính Sách Đổi Trả & Bảo Hành</h5>
+                <h5>Chính sách bảo mật</h5>
+            </div>
+            <div>
+                <h4>DANH MỤC NỔI BẬT</h4>
+                <h5>Giới thiệu về PEAK Sport</h5>
+                <h5>Giày bóng rổ</h5>
+                <h5>Giày Chạy Bộ</h5>
+                <h5>Phụ Kiện</h5>
+            </div>
+        </div>
+
+
+
+        <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore-compat.js"></script>
+        <script src="sneaker.js"></script>
+        <script src="firebase-config.js"></script>
+</body>
+
+</html>

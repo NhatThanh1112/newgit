@@ -1,0 +1,473 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.highlight{
+    color: white !important;
+    background-color: black;
+}
+
+main {
+  position: relative;
+  width: 99.5%;
+  max-width: 1300px; /* kích thước tối đa bạn muốn */
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 2px auto; /* canh giữa và cách trên dưới */
+}
+
+.search-container {
+    position: relative;
+    width: 300px; /* độ rộng container */
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* thêm padding bên phải cho icon */
+    border-radius: 25px;
+    border: 2px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+#search-input::placeholder {
+    color: #888;       /* màu placeholder */
+}
+
+.search-link {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;       /* icon màu đen */
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search-link:hover {
+    color: #7953cd;    /* đổi màu khi hover */
+}
+
+
+.slider {
+--mainColor: #ffffff; /* default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;  /* hiệu ứng mượt */
+  z-index: 0;
+}
+
+.slider.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.navi {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 0; /* không cần chiều cao */
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px; /* khoảng cách 2 bên */
+  z-index: 10;
+}
+
+.navi button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.navi button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+button:first-child{
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+.top-menu{
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 9em;
+    grid-row-gap: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 100;
+    transition: color 0.4s ease, background-color 0.4s ease;
+
+    /* Thêm hiệu ứng blur */
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.top-menu *, 
+.top-menu a, 
+.top-menu h4, 
+.top-menu i {
+  color: black;
+  transition: color 0.4s ease;
+}
+
+.top-menu.gradient {
+    background: linear-gradient(
+        to bottom,
+        var(--navColor) 0%,
+        transparent 100%
+    );
+}
+
+.top-menu a {
+    transition: color 0.4s;
+}
+
+.top-menu .page{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.top-menu .page a{
+    color: black;
+}
+.top-menu .icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.top-menu .icon a{
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+}
+.top-menu .icon i{
+    padding: 0 16px;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+/* Tạo hình chữ nhật gọn quanh chữ */
+.nav h4 {
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 6px;
+    transition: 0.2s;
+    color: inherit;
+}
+
+/* Khi hover vào a.nav hoặc div.nav → chữ trắng, nền đen */
+.nav:hover h4 {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.nav.highlight h4 {
+    background-color: black;
+    color: white;
+}
+
+.nav.highlight:hover h4 {
+    background-color: black;
+    color: white !important;
+    transform: none;         
+    box-shadow: none;        
+    cursor: default;         
+}
+
+.nav:not(.highlight):hover h4 {
+  background-color: black;
+  color: white !important;
+}
+
+
+.gender h4 {
+  padding: 6px 12px;          
+  display: inline-block;      
+  border-radius: 6px;         
+  transition: 0.2s;
+}
+
+.gender:hover h4 {
+  color: white;
+  background-color: black;
+}
+
+img{
+    width: 105px;
+    height: auto;
+}
+
+.fa-cart-shopping {
+    font-size: 1.5rem; 
+    color: #333; 
+}
+
+/* line */
+.lines{
+    border-right: 1px solid white;
+    height: 36px;
+}
+
+.main-content .selector {
+    padding: 16px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.selector > div {
+    display: flex;              /* dùng flexbox */
+    justify-content: center;    /* căn giữa theo ngang */
+    gap: 10px;                  /* khoảng cách đều giữa các thẻ */
+    flex-wrap: wrap;            /* nếu quá nhiều, xuống dòng */
+}
+
+.selector .type {
+    position: relative;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s;
+    color: darkgray;
+
+    /* gradient chữ */
+    background: linear-gradient(to right, #7953cd 20%, #00affa 30%, #0190cd 70%, #764ada 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* underline effect */
+.selector .type::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: black;
+    transition: width 0.3s ease;
+}
+
+/* hover effect cho link chưa active */
+.selector .type:not(.highlight):hover {
+    border: 1.9px solid black;
+}
+
+.selector .type:not(.highlight):hover::after {
+    width: 100%;
+}
+
+/* khi active (click) */
+.selector .type.highlight {
+    border: 1.9px solid black;
+}
+
+.selector .type.highlight::after {
+    width: 100%;
+}
+
+.product-layout{
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+}
+
+#products{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 1em ;
+    grid-row-gap: 2em;
+}
+
+.ad{
+    margin-top: 30px;
+}
+
+.left{
+    margin-left: 10px;
+}
+
+.left img{
+    width: 150px;
+    height: auto
+}
+
+.right{
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.right img{
+    width: 150px;
+    height: auto
+}
+
+#products .card {
+    width: 17em;
+    height: auto;
+    padding: 1.2em;
+    border-radius: 12px;
+    background-color: white;                
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-image-source: linear-gradient(45deg, black, #333, black);
+}
+
+#products .card:hover{
+    transform: translateY(-0.1in);
+}
+
+
+#products .card .image-container {
+    display: flex;
+    justify-content: center; /* canh giữa ngang */
+    align-items: center;     /* canh giữa dọc */
+    height: 250px;
+    width: 100%;             /* đảm bảo bao hết chiều ngang card */
+    margin-bottom: 15px;
+}
+
+
+#products .card .image-container img {
+    max-width: 100%;       /* ảnh không vượt quá container */
+    max-height: 100%;      /* giữ ảnh vừa khung */
+    object-fit: contain;   /* ảnh giữ tỉ lệ, không méo */
+    display: block;        /* loại bỏ margin mặc định flex */
+    margin: 0 auto;        /* căn giữa ngang */
+    transition: transform 0.3s ease;
+}
+
+
+/* Them */
+
+
+#products .card .container {
+    width: 100%;
+    max-width: 18em;
+    padding-top: 1em;
+    color: #110f29;
+}
+
+#products .card .container h5 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#products .card .container h6 {
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+#products .card .container button{
+    background-color: white;
+    border: none;
+    border: solid 1px black;
+    margin-top: 14px;
+    padding: 5px 0px;
+    text-transform: uppercase;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+}
+
+#products .card .container button:hover{
+    background-color: black;
+    color: white;
+}
+
+table{
+    width: 70%;
+    margin: auto;
+}
+
+table, th, td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.img-cart{
+    width: 20%;
+}
+
+#del-all{
+    width: 70%;
+    margin: 20px auto;
+    border: none;
+    background-color: rgb(198, 61, 61);
+    color: white;
+    padding: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+}
+
+.end{
+    border-top: black 2px solid;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    padding: 30px;
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./logIn.css">
+</head>
+
+<body>
+  <div class="account-box" id="login">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div class="user-box">
+        <input id="email" type="text" name="" required="" placeholder="Email">
+      </div>
+      <div class="user-box">
+        <input id="password" type="password" name="" required="" placeholder="Password">
+      </div>
+      <div class="selector">
+        <a class="account" href="../signIn/signIn.html">Bạn chưa có tài khoản?</a>
+        <button id="btn" type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore-compat.js"></script>
+  <script src="login.js"></script>
+  <script src="../Home/firebase-config.js"></script>
+
+
+</body>
+
+</html>
